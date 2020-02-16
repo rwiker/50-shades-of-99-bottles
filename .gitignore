@@ -1,2 +1,4 @@
 *~
 *.fasl
+*.xfasl
+*.64xfasl
