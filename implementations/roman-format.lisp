@@ -1,3 +1,5 @@
+(in-package #:99-bottles)
+
 (defpackage #:roman-format
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
@@ -30,20 +32,13 @@
 	  (bottles n)))
 
 (defun bottle-song (bottles)
-  (fresh-line)
   (do ((i bottles (1- i)))
       ((zerop i) nil)
     (verse i))
-  (last-verse bottles)
-  (terpri))
+  (last-verse bottles))
 	
     
        
 #||
-
-(format t "~[~@()~;:~d~] bottle~:p" 0)
-
-(format t "~@(~a~)" "this is a test")
-
 (bottle-song 3)
 ||#

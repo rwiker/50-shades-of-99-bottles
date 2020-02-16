@@ -14,6 +14,7 @@
 	  (if (= n 1) "" "s")))
 
 (defun line-1 (n)
+  (format t "~&")
   (bottles n t)
   (format t " on the wall, ")
   (bottles n)
@@ -36,14 +37,10 @@
   (format t " on the wall.~%"))
 
 (defun bottle-song (bottles)
-  (fresh-line)
   (do ((i bottles (1- i)))
       ((zerop i) nil)
     (verse i))
-  (last-verse bottles)
-  (terpri))
-	
-    
+  (last-verse bottles))
        
 #||
 (bottle-song 3)

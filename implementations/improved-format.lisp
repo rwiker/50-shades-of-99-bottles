@@ -32,14 +32,7 @@
       ((zerop i) nil)
     (verse i))
   (last-verse bottles))
-	
-    
-       
+
 #||
-
-(format t "~[~@()~;:~d~] bottle~:p" 0)
-
-(format t "~@(~a~)" "this is a test")
-
 (bottle-song 3)
 ||#

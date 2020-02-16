@@ -31,9 +31,7 @@
   (loop for i from bottles above 0
      do (verse i)
      finally (last-verse bottles)))
-	
-    
-       
+
 #||
-(bottle-song 99)
+(bottle-song 3)
 ||#

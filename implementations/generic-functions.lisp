@@ -16,7 +16,7 @@
   "no more bottles of beer")
 
 (defun line-1 (n)
-  (format t "~@(~a~) on the wall, ~:*~a.~%"
+  (format t "~&~@(~a~) on the wall, ~:*~a.~%"
 	  (bottles n)))
 
 (defun line-2 (n)
@@ -34,12 +34,10 @@
 	  (bottles n)))
 
 (defun bottle-song (bottles)
-  (fresh-line)
   (do ((i bottles (1- i)))
       ((zerop i) nil)
     (verse i))
-  (last-verse bottles)
-  (terpri))
+  (last-verse bottles))
        
 #||
 (bottle-song 3)

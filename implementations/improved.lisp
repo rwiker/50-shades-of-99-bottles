@@ -16,6 +16,7 @@
   (princ " of beer"))
 
 (defun line-1 (n)
+  (fresh-line)
   (bottles n t)
   (princ " on the wall, ")
   (bottles n)
@@ -41,12 +42,10 @@
   (terpri))
 
 (defun bottle-song (bottles)
-  (fresh-line)
   (do ((i bottles (1- i)))
       ((zerop i) nil)
     (verse i))
-  (last-verse bottles)
-  (terpri))
+  (last-verse bottles))
 	
     
        
