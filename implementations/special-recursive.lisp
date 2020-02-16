@@ -1,6 +1,9 @@
 (in-package #:99-bottles)
 
 (defpackage #:special-recursive
+  (:documentation "This implementation shows another take on recursion, where some
+parameters are passed via _special_ variables - variables that have \"dynamic scope\"
+rather than \"lexical scope\".")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 

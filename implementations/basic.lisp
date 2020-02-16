@@ -1,4 +1,6 @@
 (defpackage #:basic
+  (:documentation "Simple implementation, using a *do* loop, and the low-level
+printing functions *fresh-line*, *princ* and *terpri*.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 

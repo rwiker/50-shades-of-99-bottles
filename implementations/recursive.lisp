@@ -1,6 +1,7 @@
 (in-package #:99-bottles)
 
 (defpackage #:recursive
+  (:documentation "Recursion? Of course.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 

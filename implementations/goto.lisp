@@ -1,6 +1,9 @@
 (in-package #:99-bottles)
 
 (defpackage #:goto
+  (:documentation "Common Lisp also has _goto_ in the form of _tagbody_ and _go_.
+There are actually valid use cases for these, but mainly in the implementation
+of higher-level control structures, via macros.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 

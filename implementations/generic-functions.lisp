@@ -1,4 +1,7 @@
 (defpackage #:generic-functions
+  (:documentation "In Common Lisp, methods do not belong to classes, and can in fact
+be used without any classes at all. In this case, we use methods with _eql specifiers_
+to dispatch based on specific parameter values.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 

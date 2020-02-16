@@ -1,6 +1,12 @@
 (in-package #:99-bottles)
 
 (defpackage #:classes
+  (:documentation "An object-oriented implementation. Note the method _bottles_, which
+is defined as an accessor for the class _wall/n_, and methods that return constant values
+for classes _wall/1_ and _wall/0_.
+
+Note also the method _next_, which returns a _wall_ object with one bottle less, or _nil_
+if the wall is an instance of _wall/0_, which has no bottles.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 

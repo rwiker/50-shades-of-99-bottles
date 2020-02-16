@@ -1,6 +1,10 @@
 (in-package #:99-bottles)
 
 (defpackage #:recursive-format
+  (:documentation "This implementation shows the use of the recursive processing
+directive _~?_, which picks out a new format string and a list of parameters for
+it from the format parameters, processes the format string and parameters and
+splices the result into the output.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
