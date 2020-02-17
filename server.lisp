@@ -55,9 +55,24 @@
                                       :content-type "application/json")
   (cl-json:encode-json-to-string *implementations*))
 
+#+nil
 (restas:define-route implementation/code ("implementations(':(implementation)')/code"
                                           :method :get :content-type "text/plain")
   (implementation-pathname implementation))
+
+
+(restas:define-route implementation/code ("implementations(':(implementation)')/code"
+                                          :method :get :content-type "text/plain")
+  (with-open-file (f (implementation-pathname implementation) :direction :input :element-type 'character)
+    (loop for line = (read-line f nil)
+          while (and line (not (cl-ppcre:scan "^\\(in-package" line))))
+    (loop for line = (read-line f nil)
+          while (and line (not (cl-ppcre:scan "^\\(in-package" line))))
+    (with-output-to-string (s)
+      (loop for line = (read-line f nil)
+            for not-done = (and line (not (cl-ppcre:scan "^\\(register-test-forms" line)))
+            while not-done
+            do (write-line line s)))))
 
 (restas:define-route implementation/result ("implementations(':(implementation)')/result"
                                             :method :get :content-type "text/plain")
