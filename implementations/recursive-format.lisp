@@ -36,7 +36,7 @@ splices the result into the output.")
     (verse i))
   (last-verse bottles))
 	
-    
+(register-test-forms :run (lambda () (bottle-song 3)))
        
 #||
 

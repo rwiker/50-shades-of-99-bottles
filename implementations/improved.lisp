@@ -49,7 +49,7 @@ functions, but at least somehwat structured.")
     (verse i))
   (last-verse bottles))
 	
-    
+(register-test-forms :run (lambda () (bottle-song 3)))
        
 #||
 (bottle-song 3)

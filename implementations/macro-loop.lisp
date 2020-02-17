@@ -1,6 +1,9 @@
 (in-package #:99-bottles)
 
 (defpackage #:macro-loop
+  (:documentation "Uses a loop-based macro to expand calls to (bottle-song) into
+a sequence of verses.
+")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -33,11 +36,14 @@
              collect (if (plusp btls)
                        `(verse ,btls)
                        `(last-verse ,bottles)))))
-       
+
+(register-test-forms :expand (lambda () (list '(bottle-song 3) '=> (macroexpand '(bottle-song 3))))
+                     :run (lambda () (bottle-song 3)))
+
 #||
-(macroexpand '(bottle-song 3))
-(bottle-song 3)
 (let ((n 3))
   (bottle-song n))
+
+(funcall (cdr (first *test-forms*)))
 
 ||#

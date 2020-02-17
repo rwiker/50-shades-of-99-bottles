@@ -75,6 +75,8 @@ if the wall is an instance of _wall/0_, which has no bottles.")
           while w
           do (verse w))))
 
+(register-test-forms :run (lambda () (bottle-song 3)))    
+
 #||
 (bottle-song 3)
 ||#

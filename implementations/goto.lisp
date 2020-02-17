@@ -40,6 +40,8 @@ of higher-level control structures, via macros.")
        (go loop))))
   (last-verse bottles))
 
+(register-test-forms :run (lambda () (bottle-song 3)))    
+
 #||
 (bottle-song 3)
 ||#

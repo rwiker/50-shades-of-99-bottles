@@ -1,4 +1,9 @@
 (defpackage #:bottle-format
+  (:documentation "Formatting a format-based implementation of the bottle song
+in the shape of a bottle. See
+[http://www.99-bottles-of-beer.net](http://www.99-bottles-of-beer.net/language-common-lisp-114.html).
+
+Unfortunately, it does not quite follow the specification, so...")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -42,6 +47,7 @@
 
    (loop for bottle from in-stock downto 0 collect bottle)))
 
+(register-test-forms :run (lambda () (bottle-song 3)))
 
 #||
 (bottle-song 3)

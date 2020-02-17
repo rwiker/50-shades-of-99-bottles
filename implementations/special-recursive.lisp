@@ -34,17 +34,20 @@ rather than \"lexical scope\".")
   (format t "Go to the store and buy some more, ~a on the wall.~%~%"
 	  (bottles)))
 
-(defun recurse ()
-  (when (plusp *bottles*)
-    (verse)
-    (let ((*bottles* (1- *bottles*)))
-      (recurse))))
+
 
 (defun bottle-song (bottles)
-  (let ((*bottles* bottles))
-    (recurse)
-    (last-verse)))
-       
+  (labels ((recurse ()
+             (when (plusp *bottles*)
+               (verse)
+               (let ((*bottles* (1- *bottles*)))
+                 (recurse)))))
+    (let ((*bottles* bottles))
+      (recurse)
+      (last-verse))))
+
+(register-test-forms :run (lambda () (bottle-song 3)))
+
 #||
 (bottle-song 3)
 ||#

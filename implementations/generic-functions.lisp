@@ -41,6 +41,8 @@ to dispatch based on specific parameter values.")
       ((zerop i) nil)
     (verse i))
   (last-verse bottles))
+
+(register-test-forms :run (lambda () (bottle-song 3)))    
        
 #||
 (bottle-song 3)

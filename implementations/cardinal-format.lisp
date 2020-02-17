@@ -1,6 +1,8 @@
 (in-package #:99-bottles)
 
 (defpackage #:cardinal-format
+  (:documentation "Another useful function of _format_ is to convert numbers
+into their textual equivalent.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -33,6 +35,8 @@
       ((zerop i) nil)
     (verse i))
   (last-verse bottles))
+
+(register-test-forms :run (lambda () (bottle-song 3)))    
 
 #||
 (bottle-song 3)

@@ -12,6 +12,10 @@ function initmenu(implementations) {
 }
 
 function selectImplementation(implementation) {
+  $("div.implementation-code>pre>code").empty();
+  $("div.implementation-output>pre").empty();
+  $("div.implementation-description").empty();
+  $("div.implementation-expansion>pre").empty();
   fetch(`/implementations('${implementation}')/code`)
     .then(resp=>resp.text())
     .then(code=>$("div.implementation-code>pre>code").text(code))
@@ -23,6 +27,9 @@ function selectImplementation(implementation) {
   fetch(`implementations('${implementation}')/description`)
     .then(resp=>resp.text())
     .then(description=>$("div.implementation-description").html(description));
+  fetch(`implementations('${implementation}')/expand`)
+    .then(resp=>resp.text())
+    .then(expansion=>$("div.implementation-expansion>pre").text(expansion));
 }
 
 

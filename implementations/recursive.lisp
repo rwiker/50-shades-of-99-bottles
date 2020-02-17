@@ -28,15 +28,16 @@
   (format t "Go to the store and buy some more, ~a on the wall.~%~%"
 	  (bottles n)))
 
-(defun recurse (bottles)
-  (when (plusp bottles)
-    (verse bottles)
-    (recurse (1- bottles))))
-
 (defun bottle-song (bottles)
-  (recurse bottles)
-  (last-verse bottles))
-       
+  (labels ((recurse (bottles)
+             (when (plusp bottles)
+               (verse bottles)
+               (recurse (1- bottles)))))
+    (recurse bottles)
+    (last-verse bottles)))
+
+(register-test-forms :run (lambda () (bottle-song 3)))
+
 #||
 (bottle-song 3)
 ||#

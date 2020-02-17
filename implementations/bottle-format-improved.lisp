@@ -1,6 +1,9 @@
 (in-package #:99-bottles)
 
 (defpackage #:bottle-format-improved
+  (:documentation "Formatting a format-based implementation of the bottle song
+in the shape of a bottle. Corrected version of
+[http://www.99-bottles-of-beer.net](http://www.99-bottles-of-beer.net/language-common-lisp-114.html).")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -51,6 +54,7 @@
                                 in-stock
                                 (1- bottle))))))
 
+(register-test-forms :run (lambda () (bottle-song 3)))    
 
 #||
 (bottle-song 3)

@@ -1,6 +1,8 @@
 (in-package #:99-bottles)
 
 (defpackage #:macro-recursive
+  (:documentation "Uses a recursion-based macro to expand calls to (bottle-song) into
+a sequence of verses.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -35,8 +37,9 @@
     `(progn
        ,@(recurse bottles))))
 
-#||
-(macroexpand '(bottle-song 3))
+(register-test-forms :expand (lambda () (list '(bottle-song 3) '=> (macroexpand '(bottle-song 3))))
+                     :run (lambda () (bottle-song 3)))
 
+#||
 (bottle-song 3)
 ||#

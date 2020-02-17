@@ -1,6 +1,6 @@
 (defpackage #:simple-format
   (:documentation "This version eschews the low-level printing format in favour of
-*format*, which is the Swiss army chainsaw of printing functions.
+*format*, which is the Swiss Army Chainsaw of printing functions.
 
 The awesomeness of *format* is not brought out in this implementation, but note the
 constructs _~&_ to effect _fresh-line_, _~%_ for _terpri_ and _~A_ for _princ_.")
@@ -46,7 +46,9 @@ constructs _~&_ to effect _fresh-line_, _~%_ for _terpri_ and _~A_ for _princ_."
       ((zerop i) nil)
     (verse i))
   (last-verse bottles))
-       
+
+(register-test-forms :run (lambda () (bottle-song 3)))
+
 #||
 (bottle-song 3)
 ||#

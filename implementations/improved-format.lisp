@@ -1,17 +1,17 @@
 (in-package #:99-bottles)
 
 (defpackage #:improved-format
-  (:documentation "This implementation demonstrates some of the power of _format_.
+  (:documentation "This implementation demonstrates some of the power of _format_:
 
-The conditional construct _~[...~;...~;...~:;~]_
+- The conditional construct _~[...~;...~;...~:;~]_
 
-The \"goto\" construct _~*_, here used in the form _~:*_, which means go back to
+- The \"goto\" construct _~*_, here used in the form _~:*_, which means go back to
 the previous parameter.
 
-The _case-change_ directive, which in the form _~@(...~)_ capitalizes the first word
+- The _case-change_ directive, which in the form _~@(...~)_ capitalizes the first word
 of the enclosed string.
 
-Note also _~p_, which conditionally inserts a plural indicator \"s\", depending
+- Note also _~p_, which conditionally inserts a plural indicator \"s\", depending
 on the value of the next parameter to _format_.
 
 
@@ -47,6 +47,8 @@ on the value of the next parameter to _format_.
       ((zerop i) nil)
     (verse i))
   (last-verse bottles))
+
+(register-test-forms :run (lambda () (bottle-song 3)))    
 
 #||
 (bottle-song 3)

@@ -61,12 +61,20 @@
 
 (restas:define-route implementation/result ("implementations(':(implementation)')/result"
                                             :method :get :content-type "text/plain")
-  (let* ((package (find-package (string-upcase implementation)))
-         (symbol (and package (find-symbol "BOTTLE-SONG" package))))
-    (if symbol
+  (let ((runner (get-run-form implementation)))
+    (if runner
       (with-output-to-string (*standard-output*)
-        (funcall symbol 3))
+        (funcall runner))
       (setf (hunchentoot:return-code*) hunchentoot:+http-not-found+))))
+
+(restas:define-route implementation/expand ("implementations(':(implementation)')/expand"
+                                            :method :get :content-type "text/plain")
+  (let ((expander (get-expand-form implementation)))
+    (if expander
+      (with-output-to-string (*standard-output*)
+        (let ((*package* (find-package (string-upcase implementation))))
+          (pprint (funcall expander)))
+        (setf (hunchentoot:return-code*) hunchentoot:+http-not-found+)))))
 
 (defun markdown (string)
   (with-output-to-string (s)

@@ -42,7 +42,7 @@ printing functions *fresh-line*, *princ* and *terpri*.")
   (princ " of beer on the wall.")
   (terpri))
 	
-    
+(register-test-forms :run (lambda () (bottle-song 3)))    
        
 #||
 (bottle-song 3)

@@ -1,6 +1,8 @@
 (in-package #:99-bottles)
 
 (defpackage #:roman-format
+  (:documentation "_format_ can also render numbers in their roman numeral form,
+whenever that is a good idea (or not).")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -36,9 +38,9 @@
       ((zerop i) nil)
     (verse i))
   (last-verse bottles))
-	
-    
-       
+
+(register-test-forms :run (lambda () (bottle-song 3)))
+
 #||
 (bottle-song 3)
 ||#

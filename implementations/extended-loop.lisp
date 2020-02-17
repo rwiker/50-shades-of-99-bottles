@@ -1,6 +1,7 @@
 (in-package #:99-bottles)
 
 (defpackage #:extended-loop
+  (:documentation "Extended loop - the Swiss Army Chainsaw of loop constructs.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -31,6 +32,8 @@
   (loop for i from bottles above 0
      do (verse i)
      finally (last-verse bottles)))
+
+(register-test-forms :run (lambda () (bottle-song 3)))    
 
 #||
 (bottle-song 3)
