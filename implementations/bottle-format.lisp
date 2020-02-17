@@ -1,3 +1,5 @@
+(in-package #:99-bottles)
+
 (defpackage #:bottle-format
   (:documentation "Formatting a format-based implementation of the bottle song
 in the shape of a bottle. See

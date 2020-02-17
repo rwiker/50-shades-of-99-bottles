@@ -1,3 +1,5 @@
+(in-package #:99-bottles)
+
 (defpackage #:basic
   (:documentation "Simple implementation, using a *do* loop, and the low-level
 printing functions *fresh-line*, *princ* and *terpri*.")

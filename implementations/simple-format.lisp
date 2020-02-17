@@ -1,3 +1,5 @@
+(in-package #:99-bottles)
+
 (defpackage #:simple-format
   (:documentation "This version eschews the low-level printing format in favour of
 *format*, which is the Swiss Army Chainsaw of printing functions.

@@ -1,3 +1,5 @@
+(in-package #:99-bottles)
+
 (defpackage #:improved
   (:documentation "Slightly improved version: still using the *do* loop and low-level printing
 functions, but at least somehwat structured.")
