@@ -17,7 +17,7 @@ spec:
          port: 8080
       environmentConfig:
         - environment: dev
-	  resources:
-	    requests:
-	      memory: "1Gi"
-	      cpu: "1000m"
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "1000m"
