@@ -104,6 +104,7 @@
       (setf (hunchentoot:return-code*) hunchentoot:+http-not-found+))))
 
 (compile-and-load-all-implementations)
-(restas:start :99-bottles-server :port 8080)
 
+#||
 (setf hunchentoot:*catch-errors-p* nil)
+||#

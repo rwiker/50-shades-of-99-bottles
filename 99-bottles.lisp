@@ -21,6 +21,8 @@
 (defun get-run-form (implementation)
   (let ((desc (gethash implementation *implementation-registry*)))
     (and desc (run desc))))
-        
-        
+
+(defun main ()
+  (restas:start :99-bottles-server :port 8080)
+  (loop (sleep 1)))
 
