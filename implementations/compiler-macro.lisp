@@ -2,7 +2,7 @@
 
 (defpackage #:compiler-macro
   (:documentation "Illustrates the use of _compiler macros_ to selectively
-replace forms with alternative implementations. In this case, is the argument
+replace forms with alternative implementations. In this case, if the argument
 to bottle-song is an integer between 1 and 5 inclusive, the call to bottle-song
 will be inlined.")
   (:use #:99-bottles #:common-lisp)
