@@ -2,7 +2,7 @@
 
 (defpackage #:improved
   (:documentation "Slightly improved version: still using the *do* loop and low-level printing
-functions, but at least somehwat structured.")
+functions, but at least somewhat structured.")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
