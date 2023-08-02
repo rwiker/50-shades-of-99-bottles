@@ -3,7 +3,7 @@
 (defpackage #:bottle-format-improved
   (:documentation "Formatting a format-based implementation of the bottle song
 in the shape of a bottle. Corrected version of
-[http://www.99-bottles-of-beer.net](http://www.99-bottles-of-beer.net/language-common-lisp-114.html).")
+[http://www.99-bottles-of-beer.net/language-common-lisp-114.html](http://www.99-bottles-of-beer.net/language-common-lisp-114.html).")
   (:use #:99-bottles #:common-lisp)
   (:export #:bottle-song))
 
@@ -39,15 +39,16 @@ in the shape of a bottle. Corrected version of
       o more~0:;~:*~D~
       ~] bottle~:*~P ~
       of beer.~00001%~
-      ~:*~[Go to the s~
-      tore and buy som~
-      e more~00000:;Ta~
-      ke one down and ~
-      pass it around~]~
-      , ~[No more~00:;~
-      ~01:*~D~] bottle~
-      ~1:*~P of beer o~
-      n the wall.~02%~}"
+      ~:*~[Go to the ~
+      store and buy s~
+      ome more~0000:;~
+      Take one down a~
+      nd pass it arou~
+      nd~], ~[No more~
+      ~:;~1:*~D~] bot~
+      tle~1:*~P of be~
+      er on the wall.~
+      ~000000000002%~}"
 
    (loop for bottle from in-stock downto 0
          collect (list bottle (if (zerop bottle)
@@ -66,3 +67,4 @@ in the shape of a bottle. Corrected version of
 ;;;             ~[No more~:;~:*~D~] bottle~:*~P of beer on the wall.~2%~}"
 
 ||#
+
