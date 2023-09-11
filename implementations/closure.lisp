@@ -43,9 +43,11 @@ an object. With closures, you have bindings associated with methods.")
 (defun bottle-song (bottles)
   (multiple-value-bind (more? next last)
       (make-closure bottles)
-    (loop while (funcall more?)
-          do (funcall next)
-          finally (funcall last))))
+    (loop
+       (unless (funcall more?)
+         (funcall last)
+         (return))
+       (funcall next))))
 
 (register-test-forms :run (lambda () (bottle-song 3)))    
 
